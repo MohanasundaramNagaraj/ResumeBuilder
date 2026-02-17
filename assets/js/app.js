@@ -782,7 +782,7 @@ function checkAuth() {
 function logout() {
     localStorage.removeItem('currentUser');
     localStorage.removeItem('rememberUser');
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
 }
 
 function loadUserResume() {
@@ -1068,6 +1068,7 @@ function buildModernTemplate() {
                 <p>
                     ${resumeData.personal.email || ""} 
                     ${resumeData.personal.phone ? " | " + resumeData.personal.phone : ""}
+                    ${resumeData.personal.linkedin ? " | Linkedin Profile: " + resumeData.personal.linkedin : ""}
                 </p>
             </div>
         </div>
@@ -1080,6 +1081,9 @@ function buildModernTemplate() {
     </div>
     `;
 }
+
+
+
 function buildSidebarTemplate() {
     return `
     <div class="template sidebar-template">
@@ -1089,7 +1093,8 @@ function buildSidebarTemplate() {
             <h2>${resumeData.personal.fullName || ""}</h2>
             <p>${resumeData.personal.email || ""}</p>
             <p>${resumeData.personal.phone || ""}</p>
-
+            <p>${resumeData.personal.linkedin  ||""}
+            
             <h3>Skills</h3>
             <p>${resumeData.skills?.technical || ""}</p>
 
@@ -1113,6 +1118,9 @@ function buildCreativeTemplate() {
         <div class="creative-header">
             ${buildProfilePhoto("creative-photo")}
             <h1>${resumeData.personal.fullName || ""}</h1>
+            <span>Email: ${resumeData.personal.email || ""}</span>
+            <span>Phone: ${resumeData.personal.phone || ""}</span>
+            <span>Linkedin: ${resumeData.personal.location || ""}</span>
             <span>${resumeData.personal.location || ""}</span>
         </div>
 
@@ -1141,6 +1149,7 @@ function buildATSTemplate() {
         <p>
             ${resumeData.personal.email || ""} 
             ${resumeData.personal.phone ? " | " + resumeData.personal.phone : ""}
+            ${resumeData.personal.linkedin ? " | " + resumeData.personal.linkedin : ""}
             ${resumeData.personal.location ? " | " + resumeData.personal.location : ""}
         </p>
 

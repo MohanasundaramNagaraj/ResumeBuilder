@@ -32,7 +32,7 @@ function showForgotPassword() {
 
 function showDemo() {
     // Redirect to the main resume builder
-    window.location.href = 'index.html';
+    window.location.href = 'home.html';
 }
 
 function createResume() {
@@ -41,7 +41,7 @@ function createResume() {
     
     if (currentUser) {
         // User is logged in, redirect to resume builder
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
     } else {
         // User not logged in, show signup modal
         showSignup();
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             alert('Login successful! Redirecting to resume builder...');
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'home.html';
             }, 1000);
         } else {
             alert('Invalid email or password');
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         alert('Account created successfully! Redirecting to resume builder...');
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'home.html';
         }, 1000);
     });
     
